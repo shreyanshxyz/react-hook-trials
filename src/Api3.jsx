@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import axios from 'axios';                                              // import axios
 
 function Api3() {
-    const [num, setnum] = useState(1)
-    const [name, setname] = useState('')
+    const [num, setnum] = useState(1) //Create a state for storing the numbers of pokemon (num) initialise it with 1, and function (setNum) to change the num
+    const [name, setname] = useState('') //Create a state for storing the name of pokemon (name) initialise it with empty string, and function (setName) to change the name accordingly
     const  pokemon1 = `https://pokeapi.co/api/v2/pokemon/${num}`;
 
 useEffect(() => {
