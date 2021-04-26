@@ -16,12 +16,12 @@ useEffect(() => {
     //     cleanup
     // }
     dataGet();
-});
+});                             //If we added the [] after the "}", the state will change only once when the page loads thus only once will the name be refreshed instead of updating again and again on button click
 
 
     return (
         <div>
-            <div className="p__1">
+            <div className="p__1">                      {/* Create a div to display the pokemon name */}
                 {/* <input 
                 type="text" 
                 placeholder="Enter Pokemon No:"
@@ -31,7 +31,7 @@ useEffect(() => {
 
                 </input> */}
                 {/* {num} */}
-                The name of the pokemon is {name}
+                The name of the pokemon is {name}   {/* We call the name variable we created in usestate to display the value it contains */}
                 <br></br>
                 Change the pokemon name?
                 <br/>
@@ -43,7 +43,7 @@ useEffect(() => {
                     Call The Pokemon
                 </button> */}
             </div>
-            <button onClick={() => setnum(num+1)}>
+            <button onClick={() => setnum(num+1)}>      {/* Whenever the button is clicked, the setnum function will change the number by adding 1, hence forth changing the pokemon name associated with the number as well (see line 7 and 12) */}
                 Change
             </button>
 
