@@ -4,12 +4,12 @@ import axios from 'axios';                                              // impor
 function Api3() {
     const [num, setnum] = useState(1) //Create a state for storing the numbers of pokemon (num) initialise it with 1, and function (setNum) to change the num
     const [name, setname] = useState('') //Create a state for storing the name of pokemon (name) initialise it with empty string, and function (setName) to change the name accordingly
-    const  pokemon1 = `https://pokeapi.co/api/v2/pokemon/${num}`;
+    const  pokemon1 = `https://pokeapi.co/api/v2/pokemon/${num}`; // Constant created for the api calling link to use it instead of the whole link
 
 useEffect(() => {
-    async function dataGet(){
-        const res = await axios.get(pokemon1)
-        setname(res.data.name);
+    async function dataGet(){   //Create an async function dataget to fetch the api
+        const res = await axios.get(pokemon1) // constant res fetches the api results with axios and async, await waits for the results to arrive and axios,get fetches them
+        setname(res.data.name); // the setname function created in usestate then sets the name of the pokemon from the recieved data using res.data.name where res.data = the data from the result function
         // console.log(res.data.name)
     }
     // return () => {
