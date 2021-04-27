@@ -33,8 +33,8 @@ function Api4() {
 
     return (
         <div className="weather__app">
-            {/* <input placeholder="City Name"/> 
-            <button>Find Weather</button> */}
+            <input placeholder="City Name"/> 
+            <button>Find Weather</button>
             
             <div className="temp__cont">
                 <div className="temp__contl">
