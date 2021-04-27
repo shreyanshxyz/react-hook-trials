@@ -4,15 +4,16 @@ import axios from "axios";
 
 
 function Api4() {
-    // const [cityname, setcityname] = useState("")
     const API_KEY = "83ae873f99e8cca64fd2e00d659b24be"
+    const [CityName, setCityName] = useState("")
     const [Id, setId] = useState();
     const [Maahol, setMaahol] = useState();
     const [Desc, setDesc] = useState("");
     const [Humi, setHumi] = useState();
-    const [Tempr, setTempr] = useState()
+    const [Tempr, setTempr] = useState();
+    const [Icon, setIcon] = useState();
 
-    const apiCall = `https://api.openweathermap.org/data/2.5/weather?q=Bern&appid=${API_KEY}`;
+    const apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${CityName}&appid=${API_KEY}`;
 
     useEffect(() => {
         async function getData(){
@@ -22,6 +23,7 @@ function Api4() {
              setDesc(result.data.weather[0].description);
              setHumi(result.data.main.humidity);
              setTempr(result.data.main.temp);
+             setIcon(result.data.weather[0].icon);
         }
 
         console.log(getData);
@@ -33,8 +35,7 @@ function Api4() {
 
     return (
         <div className="weather__app">
-            <input placeholder="City Name"/> 
-            <button>Find Weather</button>
+            <input placeholder="City Name" value={CityName} onChange={e => setCityName(e.target.value)}/> 
             
             <div className="temp__cont">
                 <div className="temp__contl">
@@ -45,6 +46,8 @@ function Api4() {
                     {Humi}
                 </div>
             </div>
+
+            <img src={`http://openweathermap.org/img/wn/${Icon}.png`} alt="Icon"></img>
 
             <div>
                 <h1>City ID is: {Id}</h1>
