@@ -5,7 +5,7 @@ import axios from "axios";
 
 function Api4() {
     const API_KEY = "83ae873f99e8cca64fd2e00d659b24be"
-    const [CityName, setCityName] = useState("")
+    const [CityName, setCityName] = useState("Helsinki")
     const [Id, setId] = useState();
     const [Maahol, setMaahol] = useState();
     const [Desc, setDesc] = useState("");
