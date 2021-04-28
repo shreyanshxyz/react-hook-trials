@@ -4,6 +4,7 @@ import './App.css';
 // import Api3 from './Api3';
 // import Api4 from './Api4';
 import Api5 from './Api5';
+import Api6 from './Api6';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       {/* <Api3 /> */}
       {/* <Api4 /> */}
       <Api5 />
+      <Api6 />
     </div>
   );
 }
