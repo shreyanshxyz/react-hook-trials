@@ -11,6 +11,7 @@ function Api5() {
     const [TotDet, setTotDet] = useState();
     const [Rec, setRec] = useState();
     const [TotRec, setTotRec] = useState();
+    const [Act, setAct] = useState();
 
     useEffect(() => {
 
@@ -28,6 +29,8 @@ function Api5() {
 
         setRec(resu.data.cases_time_series[lastDate].dailyrecovered);
         setTotRec(resu.data.cases_time_series[lastDate].totalrecovered);
+
+        setAct(TotConf - TotDet - TotRec);
         }
         // return () => {
         //     cleanup
@@ -43,8 +46,7 @@ function Api5() {
             </div>
 
             <div className="case__box">
-                {/* <h1>{Conf - (Dec + Rec)}</h1> */}
-                {/* <h3>{TotConf - (TotDec + TotRec)}</h3> */}
+                <h1>{Act}</h1>
             </div>
 
             <div className="case__box">
