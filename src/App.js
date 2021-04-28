@@ -3,8 +3,9 @@ import './App.css';
 // import Api2 from './Api2';
 // import Api3 from './Api3';
 // import Api4 from './Api4';
-import Api5 from './Api5';
-import Api6 from './Api6';
+// import Api5 from './Api5';
+// import Api6 from './Api6';
+import MaterialUI from './MaterialUI'
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
       {/* <Api2 /> */}
       {/* <Api3 /> */}
       {/* <Api4 /> */}
-      <Api5 />
-      <Api6 />
+      {/* <Api5 /> */}
+      {/* <Api6 /> */}
+      <MaterialUI />
     </div>
   );
 }
