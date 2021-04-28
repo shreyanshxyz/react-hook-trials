@@ -13,7 +13,7 @@ function Api4() {
     const [Tempr, setTempr] = useState();
     const [Icon, setIcon] = useState();
 
-    const apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${CityName}&appid=${API_KEY}`;
+    const apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${CityName}&units=metric&appid=${API_KEY}`;
 
     useEffect(() => {
         async function getData(){
