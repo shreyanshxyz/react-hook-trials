@@ -1,19 +1,59 @@
-import React from 'react'
-import './MaterialUI.css'
-import { Card, CardContent } from '@material-ui/core';
+import React from "react";
+import "./MaterialUI.css";
+import { Card, CardContent } from "@material-ui/core";
+// import PropTest from "./PropTest";
 
-function MaterialUI() {
-    return (
-        <div>
-            <Card variant="outlined" className="material__card">
-                <CardContent className="card__content">
-                    <h2>Material Ui Card</h2>
-                    <h4>Card Less Valuable Info</h4>
-                    <p>Least Valuable</p>
-                </CardContent>
-            </Card>
-        </div>
-    )
+function MaterialUI(props) {
+  return (
+    <>
+      <div className="card__container1">
+        <Card className="material__card">
+          <CardContent>
+            <h2>Active Cases</h2>
+            <h4>+1000</h4>
+            <h3>31000</h3>
+          </CardContent>
+        </Card>
+
+        <Card className="material__card">
+          <CardContent>
+            <h2>Active Cases</h2>
+            <h3>31000</h3>
+          </CardContent>
+        </Card>
+
+        <Card className="material__card">
+          <CardContent>
+            <h2>Active Cases</h2>
+            <h3>31000</h3>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="card__container2">
+        <Card className="material__card">
+          <CardContent>
+            <h2>Active Cases</h2>
+            <h3>31000</h3>
+          </CardContent>
+        </Card>
+
+        <Card className="material__card">
+          <CardContent>
+            <h2>Active Cases</h2>
+            <h3>31000</h3>
+          </CardContent>
+        </Card>
+
+        <Card className="material__card">
+          <CardContent>
+            <h2>Active Cases</h2>
+            <h3>31000</h3>
+          </CardContent>
+        </Card>
+      </div>
+    </>
+  );
 }
 
-export default MaterialUI
+export default MaterialUI;
