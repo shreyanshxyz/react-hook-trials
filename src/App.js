@@ -5,8 +5,8 @@ import "./App.css";
 // import Api4 from './Api4';
 // import Api5 from './Api5';
 // import Api6 from './Api6';
-import MaterialUI from "./MaterialUI";
-// import Mui from './Mui';
+// import MaterialUI from "./MaterialUI";
+import Mui from "./Mui";
 // import PropTest from './PropTest';
 
 function App() {
@@ -18,8 +18,8 @@ function App() {
       {/* <Api4 /> */}
       {/* <Api5 /> */}
       {/* <Api6 /> */}
-      <MaterialUI />
-      {/* <Mui /> */}
+      {/* <MaterialUI /> */}
+      <Mui />
       {/* <PropTest /> */}
     </div>
   );
