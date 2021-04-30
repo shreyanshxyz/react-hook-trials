@@ -1,6 +1,7 @@
 import React from "react";
+import MaterialUI from "./MaterialUI";
 import "./Mui.css";
-import { Card, CardContent, Select, MenuItem } from "@material-ui/core";
+import { Select, MenuItem } from "@material-ui/core";
 
 function Mui() {
   return (
@@ -12,6 +13,7 @@ function Mui() {
           variant="outlined"
           autoWidth={true}
         >
+          <MenuItem value={0}>India</MenuItem>
           <MenuItem value={1}>Madhya Pradesh</MenuItem>
           <MenuItem value={2}>Uttar Pradesh</MenuItem>
           <MenuItem value={3}>Rajasthan</MenuItem>
@@ -21,61 +23,15 @@ function Mui() {
           <MenuItem value={7}>Kerala</MenuItem>
           <MenuItem value={8}>Karnataka</MenuItem>
           <MenuItem value={9}>Assam</MenuItem>
-          <MenuItem value={0}>India</MenuItem>
+          <MenuItem value={10}>Tamil Nadu</MenuItem>
+          <MenuItem value={11}>Gujarat</MenuItem>
+          <MenuItem value={12}>Jammu & Kashmir</MenuItem>
+          <MenuItem value={13}>Chandigarh</MenuItem>
+          <MenuItem value={14}>Maharashtra</MenuItem>
         </Select>
       </div>
 
-      <div className="card__container1">
-        <Card className="material__card">
-          <CardContent>
-            <h2>Confirmed</h2>
-            <h4>+1000</h4>
-            <h3>31000</h3>
-          </CardContent>
-        </Card>
-
-        <Card className="material__card">
-          <CardContent>
-            <h2>Active Cases</h2>
-            <h4>+1000</h4>
-            <h3>31000</h3>
-          </CardContent>
-        </Card>
-
-        <Card className="material__card">
-          <CardContent>
-            <h2>Recovered</h2>
-            <h4>+1000</h4>
-            <h3>31000</h3>
-          </CardContent>
-        </Card>
-      </div>
-
-      <div className="card__container2">
-        <Card className="material__card">
-          <CardContent>
-            <h2>Deaths</h2>
-            <h4>+1000</h4>
-            <h3>31000</h3>
-          </CardContent>
-        </Card>
-
-        <Card className="material__card">
-          <CardContent>
-            <h2>Tested</h2>
-            <h4>+1000</h4>
-            <h3>31000</h3>
-          </CardContent>
-        </Card>
-
-        <Card className="material__card">
-          <CardContent>
-            <h2>Vaccinated</h2>
-            <h4>+1000</h4>
-            <h3>31000</h3>
-          </CardContent>
-        </Card>
-      </div>
+      <MaterialUI />
     </div>
   );
 }
