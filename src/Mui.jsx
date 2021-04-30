@@ -70,7 +70,7 @@ function Mui() {
 
         <Card className="material__card">
           <CardContent>
-            <h2>Active Cases</h2>
+            <h2>Vaccinated</h2>
             <h4>+1000</h4>
             <h3>31000</h3>
           </CardContent>
