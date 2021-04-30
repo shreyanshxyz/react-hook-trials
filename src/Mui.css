@@ -3,5 +3,29 @@
 }
 
 .form__container {
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.drop__style {
+  min-width: 600px;
+}
+
+.card__container1 {
+  display: flex;
+  justify-content: center;
+}
+
+.card__container1 h3 {
+  padding: 0;
+}
+
+.card__container2 {
+  display: flex;
+  justify-content: center;
+}
+
+.material__card {
+  min-width: 200px;
+  max-width: 200px;
+  margin: 20px;
 }
