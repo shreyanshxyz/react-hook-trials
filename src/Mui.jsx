@@ -1,17 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import MaterialUI from "./MaterialUI";
 import "./Mui.css";
 import { Select, MenuItem } from "@material-ui/core";
 
+function RenderComponent(value) {
+  if (value === 1) {
+    <MaterialUI />;
+  }
+}
+
 function Mui() {
+  const [value, setvalue] = useState(0);
+
   return (
     <div className="drp__test">
       <div className="form__container">
         <Select
           className="drop__style"
-          defaultValue="0"
+          defaultValue={value}
           variant="outlined"
           autoWidth={true}
+          onChange={RenderComponent}
         >
           <MenuItem value={0}>India</MenuItem>
           <MenuItem value={1}>Madhya Pradesh</MenuItem>
@@ -30,8 +39,9 @@ function Mui() {
           <MenuItem value={14}>Maharashtra</MenuItem>
         </Select>
       </div>
-
-      <MaterialUI />
+      {/* <MaterialUI /> */}
+      {RenderComponent()}
+      {console.log(RenderComponent)}
     </div>
   );
 }
