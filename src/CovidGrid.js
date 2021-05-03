@@ -1,34 +1,47 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 function CovidGrid() {
-  const [State, setState] = useState();
-  const [Active, setActive] = useState();
+  //   const [State, setState] = useState([]);
+  const [Active, setActive] = useState([]);
+  const [Recovered, setRecovered] = useState([]);
+  const [Confirmed, setConfirmed] = useState([]);
 
-  useEffect(() => {
+  //   useEffect(() => {
+  //     axios.get("https://api.covid19india.org/data.json").then((res) => {
+  //       console.log(res.data.statewise);
+  //       setState(res.data.statewise);
+  //       //   setActive(res.data.statewise[{ value }].active);
+  //     });
+  //   });
+
+  const jah = (event) => {
     axios.get("https://api.covid19india.org/data.json").then((res) => {
       console.log(res.data.statewise);
-      setState(res.data.statewise);
+      //   setState(res.data.statewise);
+      setActive(res.data.statewise[event.target.value].active);
+      setConfirmed(res.data.statewise[event.target.value].confirmed);
+      setRecovered(res.data.statewise[event.target.value].recovered);
     });
-  });
-
-  function arlert(value) {
-    setActive(State[value].active);
-  }
+  };
 
   return (
     <div>
-      <select onChange={arlert(this.value)}>
-        <option value="0">State 0</option>
-        <option value="1">State 1</option>
-        <option value="2">State 2</option>
-        <option value="3">State 3</option>
-        <option value="4">State 4</option>
-        <option value="5">State 5</option>
+      <select onChange={jah}>
+        <option value={0}>Total</option>
+        <option value={1}>Maharashtra</option>
+        <option value={2}>Kerala</option>
+        <option value={3}>Karnataka</option>
+        <option value={4}>Andhra Pradesh</option>
+        <option value={5}>Tamil Nadu</option>
       </select>
 
       <div>
-        <h1>recovered</h1>
+        <h1>{Recovered}</h1>
+      </div>
+
+      <div>
+        <h1>{Confirmed}</h1>
       </div>
 
       <div>
