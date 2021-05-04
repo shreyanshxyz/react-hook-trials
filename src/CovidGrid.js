@@ -28,6 +28,9 @@ function CovidGrid() {
   return (
     <div>
       <select onChange={jah}>
+        <option value="none" selected disabled hidden>
+          Select A State
+        </option>
         <option value={0}>Total</option>
         <option value={1}>Maharashtra</option>
         <option value={2}>Kerala</option>
