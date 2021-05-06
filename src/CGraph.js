@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 
 function CGraph() {
@@ -10,14 +10,24 @@ function CGraph() {
       datasets: [
         {
           label: "Covid Cases",
+          data: [31, 55, 1, 23, 87],
+          backgroundColor: "rgba(255, 99, 132, 0.2)",
+          borderWidth: 4,
         },
       ],
     });
   };
+
+  useEffect(() => {
+    chart();
+  }, []);
   return (
     <div>
       <h1>Graph</h1>
       <p>Using Chart.js (preferably)</p>
+      <div>
+        <Line data={chartData} />
+      </div>
     </div>
   );
 }
