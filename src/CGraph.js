@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import "./CGraph.css";
@@ -6,6 +7,14 @@ function CGraph() {
   const [chartData, setchartData] = useState();
 
   const chart = () => {
+    axios
+      .get("https://api.covid19india.org/data.json")
+      .then((res) => {
+        console.log(res.data.cases_time_series);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     setchartData({
       labels: ["monday", "tuesday", "wednesday", "thursday", "friday"],
       datasets: [
