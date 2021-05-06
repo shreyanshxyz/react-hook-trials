@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
+import "./CGraph.css";
 
 function CGraph() {
   const [chartData, setchartData] = useState();
@@ -25,8 +26,28 @@ function CGraph() {
     <div>
       <h1>Graph</h1>
       <p>Using Chart.js (preferably)</p>
-      <div>
-        <Line data={chartData} />
+      <div className="graph__static">
+        <Line
+          data={chartData}
+          options={{
+            responsive: true,
+            title: { text: "Graph Static", display: true },
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    autoSkip: true,
+                    maxtickslimit: 10,
+                    beginatzero: true,
+                  },
+                  gridLines: {
+                    display: false,
+                  },
+                },
+              ],
+            },
+          }}
+        />
       </div>
     </div>
   );
