@@ -5,9 +5,11 @@ import "./CGraph.css";
 
 function CGraph() {
   const [chartData, setchartData] = useState();
+  const [GraphRecovered, GraphsetRecovered] = useState();
 
   const chart = () => {
     let confCase = [];
+    let recCase = [];
     let upDate = [];
 
     axios
@@ -18,6 +20,7 @@ function CGraph() {
         var i;
         for (i = 0; i < lastDate; i++) {
           confCase.push(parseInt(res.data.cases_time_series[i].dailyconfirmed));
+          recCase.push(parseInt(res.data.cases_time_series[i].dailyrecovered));
           upDate.push(res.data.cases_time_series[i].dateymd);
         }
         setchartData({
@@ -26,7 +29,20 @@ function CGraph() {
             {
               label: "Covid Cases",
               data: confCase,
-              backgroundColor: "purple",
+              backgroundColor: "red",
+              borderWidth: 4,
+              fill: true,
+            },
+          ],
+        });
+
+        GraphsetRecovered({
+          labels: upDate,
+          datasets: [
+            {
+              label: "Covid Cases",
+              data: recCase,
+              backgroundColor: "green",
               borderWidth: 4,
               fill: true,
             },
@@ -49,6 +65,9 @@ function CGraph() {
       <p>Using Chart.js (preferably)</p>
       <div className="graph__static">
         <Line data={chartData} />
+      </div>
+      <div>
+        <Line data={GraphRecovered} />
       </div>
     </div>
   );
