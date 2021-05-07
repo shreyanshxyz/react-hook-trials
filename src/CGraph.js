@@ -77,21 +77,47 @@ function CGraph() {
   }, []);
 
   const conf = () => {
-    document.getElementById("confirmed").style.visibility = "visible";
-    document.getElementById("recovered").style.visibility = "hidden";
-    document.getElementById("deaths").style.visibility = "hidden";
+    var x = document.getElementById("confirmed");
+    var y = document.getElementById("recovered");
+    var z = document.getElementById("deaths");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+      y.style.display = "none";
+      z.style.display = "none";
+    }
+    document.getElementById("confirmed").style.display = "block";
+    document.getElementById("recovered").style.display = "none";
+    document.getElementById("deaths").style.display = "none";
   };
 
   const reco = () => {
-    document.getElementById("confirmed").style.visibility = "hidden";
-    document.getElementById("recovered").style.visibility = "visible";
-    document.getElementById("deaths").style.visibility = "hidden";
+    var x = document.getElementById("confirmed");
+    var y = document.getElementById("recovered");
+    var z = document.getElementById("deaths");
+    if (y.style.display === "none") {
+      x.style.display = "none";
+      y.style.display = "block";
+      z.style.display = "none";
+    }
+
+    document.getElementById("confirmed").style.visibility = "none";
+    document.getElementById("recovered").style.visibility = "block";
+    document.getElementById("deaths").style.visibility = "none";
   };
 
   const ded = () => {
-    document.getElementById("confirmed").style.visibility = "hidden";
-    document.getElementById("recovered").style.visibility = "hidden";
-    document.getElementById("deaths").style.visibility = "visible";
+    var y = document.getElementById("recovered");
+    var x = document.getElementById("confirmed");
+    var z = document.getElementById("deaths");
+    if (z.style.display === "none") {
+      y.style.display = "none";
+      x.style.display = "none";
+      z.style.display = "block";
+    }
+
+    document.getElementById("confirmed").style.visibility = "none";
+    document.getElementById("recovered").style.visibility = "none";
+    document.getElementById("deaths").style.visibility = "block";
   };
 
   return (
@@ -104,21 +130,21 @@ function CGraph() {
         <button onClick={ded}>Deaths</button>
       </div>
       <div className="graph__container">
-        <div id="confirmed" className="graph__static">
+        <div
+          style={{ display: "inline" }}
+          id="confirmed"
+          className="graph__static"
+        >
           <Line data={chartData} />
         </div>
         <div
-          style={{ visibility: "hidden" }}
+          style={{ display: "none" }}
           id="recovered"
           className="graph__static"
         >
           <Line data={GraphRecovered} />
         </div>
-        <div
-          style={{ visibility: "hidden" }}
-          id="deaths"
-          className="graph__static"
-        >
+        <div style={{ display: "none" }} id="deaths" className="graph__static">
           <Line data={dead} />
         </div>
       </div>
