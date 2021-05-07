@@ -79,19 +79,21 @@ function CGraph() {
     <div>
       <h1>Graph</h1>
       <p>Using Chart.js (preferably)</p>
-      <div className="threebuttons">
+      <div className="three__buttons">
         <button>Confirmed</button>
         <button>Recovered</button>
         <button>Deaths</button>
       </div>
-      <div className="graph__static">
-        <Line data={chartData} />
-      </div>
-      <div>
-        <Line data={GraphRecovered} />
-      </div>
-      <div>
-        <Line data={dead} />
+      <div className="graph__container">
+        <div className="graph__static">
+          <Line data={chartData} />
+        </div>
+        <div>
+          <Line data={GraphRecovered} />
+        </div>
+        <div>
+          <Line data={dead} />
+        </div>
       </div>
     </div>
   );
