@@ -75,23 +75,50 @@ function CGraph() {
   useEffect(() => {
     chart();
   }, []);
+
+  const conf = () => {
+    document.getElementById("confirmed").style.visibility = "visible";
+    document.getElementById("recovered").style.visibility = "hidden";
+    document.getElementById("deaths").style.visibility = "hidden";
+  };
+
+  const reco = () => {
+    document.getElementById("confirmed").style.visibility = "hidden";
+    document.getElementById("recovered").style.visibility = "visible";
+    document.getElementById("deaths").style.visibility = "hidden";
+  };
+
+  const ded = () => {
+    document.getElementById("confirmed").style.visibility = "hidden";
+    document.getElementById("recovered").style.visibility = "hidden";
+    document.getElementById("deaths").style.visibility = "visible";
+  };
+
   return (
     <div>
       <h1>Graph</h1>
       <p>Using Chart.js (preferably)</p>
       <div className="three__buttons">
-        <button>Confirmed</button>
-        <button>Recovered</button>
-        <button>Deaths</button>
+        <button onClick={conf}>Confirmed</button>
+        <button onClick={reco}>Recovered</button>
+        <button onClick={ded}>Deaths</button>
       </div>
       <div className="graph__container">
-        <div className="graph__static">
+        <div id="confirmed" className="graph__static">
           <Line data={chartData} />
         </div>
-        <div className="graph__static">
+        <div
+          style={{ visibility: "hidden" }}
+          id="recovered"
+          className="graph__static"
+        >
           <Line data={GraphRecovered} />
         </div>
-        <div className="graph__static">
+        <div
+          style={{ visibility: "hidden" }}
+          id="deaths"
+          className="graph__static"
+        >
           <Line data={dead} />
         </div>
       </div>
