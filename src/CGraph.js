@@ -88,10 +88,10 @@ function CGraph() {
         <div className="graph__static">
           <Line data={chartData} />
         </div>
-        <div>
+        <div className="graph__static">
           <Line data={GraphRecovered} />
         </div>
-        <div>
+        <div className="graph__static">
           <Line data={dead} />
         </div>
       </div>
