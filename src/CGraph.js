@@ -6,10 +6,12 @@ import "./CGraph.css";
 function CGraph() {
   const [chartData, setchartData] = useState();
   const [GraphRecovered, GraphsetRecovered] = useState();
+  const [dead, setdead] = useState();
 
   const chart = () => {
     let confCase = [];
     let recCase = [];
+    let deadCase = [];
     let upDate = [];
 
     axios
@@ -21,6 +23,7 @@ function CGraph() {
         for (i = 0; i < lastDate; i++) {
           confCase.push(parseInt(res.data.cases_time_series[i].dailyconfirmed));
           recCase.push(parseInt(res.data.cases_time_series[i].dailyrecovered));
+          deadCase.push(parseInt(res.data.cases_time_series[i].dailydeceased));
           upDate.push(res.data.cases_time_series[i].dateymd);
         }
         setchartData({
@@ -29,7 +32,7 @@ function CGraph() {
             {
               label: "Covid Cases",
               data: confCase,
-              backgroundColor: "red",
+              backgroundColor: "#ff073a",
               borderWidth: 4,
               fill: true,
             },
@@ -40,9 +43,22 @@ function CGraph() {
           labels: upDate,
           datasets: [
             {
-              label: "Covid Cases",
+              label: "Recoveries",
               data: recCase,
-              backgroundColor: "green",
+              backgroundColor: "rgba(40, 167, 69, 0.6)",
+              borderWidth: 4,
+              fill: true,
+            },
+          ],
+        });
+
+        setdead({
+          labels: upDate,
+          datasets: [
+            {
+              label: "Deaths",
+              data: deadCase,
+              backgroundColor: "#6c757d",
               borderWidth: 4,
               fill: true,
             },
@@ -63,11 +79,19 @@ function CGraph() {
     <div>
       <h1>Graph</h1>
       <p>Using Chart.js (preferably)</p>
+      <div className="threebuttons">
+        <button>Confirmed</button>
+        <button>Recovered</button>
+        <button>Deaths</button>
+      </div>
       <div className="graph__static">
         <Line data={chartData} />
       </div>
       <div>
         <Line data={GraphRecovered} />
+      </div>
+      <div>
+        <Line data={dead} />
       </div>
     </div>
   );
