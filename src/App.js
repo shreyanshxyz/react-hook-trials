@@ -1,5 +1,5 @@
 import "./App.css";
-import CGraph from "./CGraph";
+// import CGraph from "./CGraph";
 // import CovidGrid from "./CovidGrid";
 // import Api1 from './Api1';
 // import Api2 from './Api2';
@@ -23,7 +23,7 @@ function App() {
       {/* <MaterialUI /> */}
       {/* <Mui /> */}
       {/* <PropTest /> */}
-      <CGraph />
+      {/* <CGraph /> */}
     </div>
   );
 }
