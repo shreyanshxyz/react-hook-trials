@@ -1,4 +1,5 @@
 import "./App.css";
+import BarGraph from "./BarGraph";
 // import CGraph from "./CGraph";
 // import CovidGrid from "./CovidGrid";
 // import Api1 from './Api1';
@@ -24,6 +25,7 @@ function App() {
       {/* <Mui /> */}
       {/* <PropTest /> */}
       {/* <CGraph /> */}
+      <BarGraph />
     </div>
   );
 }
