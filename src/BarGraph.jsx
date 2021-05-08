@@ -1,4 +1,5 @@
 import React from "react";
+import "./BarGraph.css";
 
 function BarGraph() {
   return (
